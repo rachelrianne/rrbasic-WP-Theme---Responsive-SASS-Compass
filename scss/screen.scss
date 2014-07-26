@@ -1,0 +1,385 @@
+@import "compass/reset";
+@import "compass/css3";
+
+
+/* =Structure
+----------------------------------------------- */
+
+/* Alignment */
+.alignleft { 
+	float: left; 
+	margin-right: 15px; 
+}
+.alignright { 
+	float: right; 
+	margin-left: 15px; 
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0; 
+}
+.row:after,
+.clearfix:after {
+	clear: both; 
+}
+.row,
+.clearfix {
+	zoom: 1; 
+}
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px);
+	/* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* =Layout
+----------------------------------------------- */
+html, body, #wrapper { 
+	height: 100%; 
+}
+body {
+	background: #fff url('../inc/bg_pattern.jpg') repeat top center;
+	color: #373737;
+	min-width: 1000px;
+	> #wrapper {
+		width: 960px;
+		height: auto;
+		min-height: 100%;
+		margin: 0 auto;
+	}
+}
+#wrapper {
+	> header {
+		margin: 120px auto 75px;
+	}
+	> .main {
+		padding-bottom: 130px;
+	}
+	aside.sidebar {
+		width: 230px;
+		margin-right: 80px;
+		float: left;
+	}
+	.content {
+		width: 650px;
+		float: left;
+		position: relative;
+	}
+}
+body > footer {
+	width: 100%;
+	min-width: 1000px;
+	height: auto;
+	background-color: #f5c6bf;
+	padding: 20px 0;
+	margin: -50px 0 0;
+	text-align: center;
+	> p {
+		margin: 0;
+	}
+}
+
+
+
+/* =Fonts
+----------------------------------------------- */
+@font-face {
+	font-family: 'BebasRegular';
+	src: url('../inc/fonts/BEBAS___-webfont.eot');
+	src: url('../inc/fonts/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../inc/fonts/BEBAS___-webfont.woff') format('woff'),
+		 url('../inc/fonts/BEBAS___-webfont.ttf') format('truetype'),
+		 url('../inc/fonts/BEBAS___-webfont.svg#BebasRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* =Global
+----------------------------------------------- */
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/* Text elements */
+h1 {
+	font-family: 'BebasRegular', sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+h2 {
+	font-family: 'WinterthurCondensedRegular', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.10em;
+	text-transform: uppercase;
+}
+h3 {
+	font-family: 'WinterthurCondensedRegular', sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.10em;
+	text-transform: uppercase;
+}
+h4 {
+	font-family: 'WinterthurCondensedItalic', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.10em;
+}
+h5 {
+	font-family: 'WinterthurCondensedItalic', sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.10em;
+}
+p {
+	font-family: 'WinterthurCondensedRegular', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.10em;
+	line-height: 18px;
+	margin-bottom: 1.625em;
+}
+ul, ol {
+	font-family: 'WinterthurCondensedRegular', sans-serif;
+	font-size: 16px;
+	letter-spacing: 0.10em;
+	margin: 0 0 1.625em 2.5em;
+}
+ul {
+	list-style: square;
+}
+ol {
+	list-style-type: decimal;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+}
+dl {
+	margin: 0 1.625em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 1.625em;
+}
+strong {
+	font-weight: bold;
+}
+cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	font-family: Georgia, "Bitstream Charter", serif;
+	font-style: italic;
+	font-weight: normal;
+	margin: 0 3em;
+}
+blockquote em, blockquote i, blockquote cite {
+	font-style: normal;
+}
+blockquote cite {
+	color: #666;
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+pre {
+	background: #f4f4f4;
+	font: 13px "Courier 10 Pitch", Courier, monospace;
+	line-height: 1.5;
+	margin-bottom: 1.625em;
+	overflow: auto;
+	padding: 0.75em 1.625em;
+}
+code, kbd, samp, var {
+	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym, dfn {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+address {
+	display: block;
+	margin: 0 0 1.625em;
+}
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 10px;
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+
+/* Media */
+img,
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+	height: auto !important;
+}
+
+/* Forms */
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+	background: #ffffff;
+	font-family: 'WinterthurCondensedRegular', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.12em;
+	@include box-shadow(none);
+	border: 1px solid #373737;
+	color: #373737;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+	color: #373737;
+	outline: none;
+}
+textarea {
+	padding-left: 3px;
+	width: 98%;
+}
+input[type=submit] {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: "BebasRegular", sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	margin: 0;
+	border: none;
+	display: block;
+	cursor: pointer;
+	-webkit-transition: ease-in 0.1s all;
+	-moz-transition: ease-in 0.1s all;
+	-o-transition: ease-in 0.1s all;
+	transition: ease-in 0.1s all;
+}
+input[type=text],
+input[type=email] {
+	padding: 3px;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #373737;
+	text-transform: uppercase;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder { /* Firefox 18- */
+	color: #373737;
+	text-transform: uppercase;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {  /* Firefox 19+ */
+	color: #373737;
+	text-transform: uppercase;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {  
+	color: #373737;
+	text-transform: uppercase;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+	transition: opacity 0.2s ease; 
+	opacity: 0;
+}
+.csstransitions label {
+	display: none;
+}
+
+/* Links */
+a {
+	color: #373737;
+	text-decoration: none;
+	-webkit-transition: ease-in 0.1s all;
+	-moz-transition: ease-in 0.1s all;
+	-o-transition: ease-in 0.1s all;
+	transition: ease-in 0.1s all;
+}
+a:focus,
+a:active,
+a:hover {
+	color: #f9c2d3;
+	text-decoration: none;
+}
+
+/* Sprites */
+
+
+/* =Header
+----------------------------------------------- */
+/* =Sidebar
+----------------------------------------------- */
+/* =Content
+----------------------------------------------- */
+/* =Footer
+----------------------------------------------- */
+/* =Posts
+----------------------------------------------- */
+/* =Comments
+----------------------------------------------- */
+/* =Archive/Cats
+----------------------------------------------- */
+/* =Error404
+----------------------------------------------- */
+/* =Pages
+----------------------------------------------- */
+
+/* Media Queries */
+@import "mediaqueries";
+
