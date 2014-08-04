@@ -5,9 +5,12 @@
 		
 		<section id="js">
 			<!-- JQUERY -->
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	    	<script>window.jQuery || document.write('<script src="<?php bloginfo('template_url');?>/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
-
+			<script>
+				if (!window.jQuery) {
+					document.write("<script src='<?php bloginfo('template_url'); ?>/js/libs/jquery-1.11.0.min.js'><\/script>");
+				}
+			</script>
+		
 			<!-- MODERNIZR -->
 			<script src="<?php bloginfo('template_url');?>/js/libs/modernizr-2.6.2.v.min.js"></script>
 
